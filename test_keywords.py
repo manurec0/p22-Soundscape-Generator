@@ -12,6 +12,8 @@ import json
 from pyo import *
 import nltk
 from rake_nltk import Rake
+nltk.download('stopwords')
+nltk.download('punkt')
 
 MAX_DURATION = 10000
 api_key = "wwqd0QQRY6P2enLsu1HK1PyADEojnL5UPXEIsjQe"
