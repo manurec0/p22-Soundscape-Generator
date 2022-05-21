@@ -10,8 +10,6 @@ freesound_client = freesound.FreesoundClient()
 freesound_client.set_token(FREESOUND_API_KEY)
 if not os.path.exists(FILES_DIR): os.mkdir(FILES_DIR)
 
-sound_tags = ["birds"]
-
 def query_freesound(query, filter, num_results=10):
     """Queries freesound with the given query and filter values.
     If no filter is given, a default filter is added to only get sounds shorter than 30 seconds.
@@ -54,9 +52,9 @@ def retrieve_sound_preview(sound, directory):
     )
 
 
-
-sounds = generate_queries(sound_tags)
-for count, sound in enumerate(sounds):
-    print('Downloading sound with id {0} [{1}/{2}]'.format(sound.id, count + 1, len(sounds)))
-    retrieve_sound_preview(sound, 'files database'+'/')
+def generate_previews(sounds):
+    sounds = generate_queries(sounds)
+    for count, sound in enumerate(sounds):
+        print('Downloading sound with id {0} [{1}/{2}]'.format(sound.id, count + 1, len(sounds)))
+        retrieve_sound_preview(sound, 'files database'+'/')
 

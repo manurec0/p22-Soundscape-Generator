@@ -1,14 +1,17 @@
 import freesound
 import os
+import inspect, sys
 
 FREESOUND_API_KEY = 'e2tYlnLzVgrRfWUnlXmOHwK7aDICqeNw8fujVubQ'
 FILES_DIR = 'files classes'  # Place where to store the downloaded files. Will be relative to the current folder.
 DATAFRAME_FILENAME = 'dataframe.csv'  # File where we'll store the metadata of our sounds collection
-FREESOUND_STORE_METADATA_FIELDS = ['id', 'name', 'username', 'previews', 'license', 'tags']  # Freesound metadata properties to store
+FREESOUND_STORE_METADATA_FIELDS = ['id', 'name', 'username', 'previews', 'license',
+                                   'tags']  # Freesound metadata properties to store
 
 freesound_client = freesound.FreesoundClient()
 freesound_client.set_token(FREESOUND_API_KEY)
 if not os.path.exists(FILES_DIR): os.mkdir(FILES_DIR)
+
 
 class Forest:
     def __init__(self):
@@ -42,7 +45,8 @@ class Forest:
                     'num_results': num_results,
                 }
             )
-        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in freesound_queries],[])
+        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in
+                      freesound_queries], [])
         return sounds
 
 
@@ -80,13 +84,14 @@ class Rainforest:
                     'num_results': num_results,
                 }
             )
-        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in freesound_queries],[])
+        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in
+                      freesound_queries], [])
         return sounds
 
 
 class Desert:
     def __init__(self):
-        self.sounds = ["wind", "insects, buzzing",]
+        self.sounds = ["wind", "insects, buzzing", ]
         self.background = ["birds chirping", "insects, buzzing", "hawk", "snake"]
         self.foreground = ["hawk", "wind", "insects, buzzing"]
 
@@ -118,15 +123,16 @@ class Desert:
                     'num_results': num_results,
                 }
             )
-        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in freesound_queries],[])
+        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in
+                      freesound_queries], [])
         return sounds
 
 
 class City:
     def __init__(self):
-        self.sounds = ["cars", "people talking", "sirens","engines"]
-        self.background = ["helicopter", "insects, buzzing", "car, horn", "phone, ringing","dog, barking"]
-        self.foreground = ["sirens","cars","wind","birds chirping"]
+        self.sounds = ["cars", "people talking", "sirens", "engines"]
+        self.background = ["helicopter", "insects, buzzing", "car, horn", "phone, ringing", "dog, barking"]
+        self.foreground = ["sirens", "cars", "wind", "birds chirping"]
 
     def query_freesound(self, query, filter, num_results=10):
         """Queries freesound with the given query and filter values.
@@ -146,7 +152,7 @@ class City:
     def generate_queries(self):
         freesound_queries = []
         filter = 'channels:1'
-        num_results = 10
+        num_results = 1
         for i in self.sounds:
             query = i
             freesound_queries.append(
@@ -156,13 +162,14 @@ class City:
                     'num_results': num_results,
                 }
             )
-        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in freesound_queries],[])
+        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in
+                      freesound_queries], [])
         return sounds
 
 
 class Beach:
     def __init__(self):
-        self.sounds = ["waves","wind", "cars", "children, screaming",]
+        self.sounds = ["waves", "wind", "cars", "children, screaming", ]
         self.background = ["waves", "birds chirping", "wind", "people talking", "music"]
         self.foreground = ["tropical bird", "wind", "waves"]
 
@@ -194,14 +201,15 @@ class Beach:
                     'num_results': num_results,
                 }
             )
-        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in freesound_queries],[])
+        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in
+                      freesound_queries], [])
         return sounds
 
 
 class Airport:
     def __init__(self):
-        self.sounds = ["engines","planes", "whistle", "people talking",]
-        self.background = ["cars","birds chirping","helicopters", "rolling suitcases"]
+        self.sounds = ["engines", "planes", "whistle", "people talking", ]
+        self.background = ["cars", "birds chirping", "helicopters", "rolling suitcases"]
         self.foreground = ["cars", "sirens", "megaphone"]
 
     def query_freesound(self, query, filter, num_results=10):
@@ -232,13 +240,14 @@ class Airport:
                     'num_results': num_results,
                 }
             )
-        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in freesound_queries],[])
+        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in
+                      freesound_queries], [])
         return sounds
 
 
 class Hospital:
     def __init__(self):
-        self.sounds = ["people talking", "cars","sirens", "megaphone", "crying babies"]
+        self.sounds = ["people talking", "cars", "sirens", "megaphone", "crying babies"]
         self.background = ["sirens", "people screaming", "people crying", "wheelchair", "sneezes", "cough"]
         self.foreground = ["phone, ringing", "sirens", "people talking"]
 
@@ -270,7 +279,8 @@ class Hospital:
                     'num_results': num_results,
                 }
             )
-        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in freesound_queries],[])
+        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in
+                      freesound_queries], [])
         return sounds
 
 
@@ -278,7 +288,7 @@ class Stadium:
     def __init__(self):
         self.sounds = ["people screaming", "whistle", "people talking", ""]
         self.background = ["music", "whistle", "birds chirping", "megaphone"]
-        self.foreground = ["bounced ball","popcorn", "sirens"]
+        self.foreground = ["bounced ball", "popcorn", "sirens"]
 
     def query_freesound(self, query, filter, num_results=10):
         """Queries freesound with the given query and filter values.
@@ -308,5 +318,16 @@ class Stadium:
                     'num_results': num_results,
                 }
             )
-        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in freesound_queries],[])
+        sounds = sum([self.query_freesound(query['query'], query['filter'], query['num_results']) for query in
+                      freesound_queries], [])
         return sounds
+
+
+def get_classes():
+    class_names = []
+    class_objects = []
+    for name, obj in inspect.getmembers(sys.modules[__name__]):
+        if inspect.isclass(obj):
+            class_names.append(name.lower())
+            class_objects.append(obj)
+    return class_names, class_objects
