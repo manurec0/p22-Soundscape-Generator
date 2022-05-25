@@ -31,8 +31,7 @@ def keyword_extractor(text):
     return keyword_extracted
 
 
-def query():
-    text = input("Enter a phrase describing the soundscape you want to recreate: ")
+def query(text):
 
     keyword = keyword_extractor(text)
 
