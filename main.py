@@ -1,8 +1,10 @@
 import text_synthesis as ts
 import database_classes as db_classes
+import database as db
+import interface as interface
 
-keywords, synonyms = ts.query()
-
+text = interface.run()
+keywords, synonyms = ts.query(text)
 class_names, class_objects = db_classes.get_classes()
 
 for item in keywords:
@@ -12,5 +14,8 @@ for item in keywords:
         obj = class_objects[index]
         class_ = getattr(db_classes, class_name)
         instance = class_()
+        sounds = instance.sounds
+        queries = db.generate_queries(sounds)
+        previews = db.generate_previews(queries)
 
 
