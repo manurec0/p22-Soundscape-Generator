@@ -40,6 +40,14 @@ def query(text):
     for i in range(len(keyword)):
         synonyms.append(synonym_extractor(keyword[i]))
 
+    result = []
+    for item in synonyms:
+        for synonym in item:
+            if synonym not in result:
+                result.append(synonym)
+
+    synonyms = result
+
     return keyword, synonyms
 
 
