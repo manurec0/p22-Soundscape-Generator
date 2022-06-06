@@ -15,9 +15,9 @@ if not os.path.exists(FILES_DIR): os.mkdir(FILES_DIR)
 
 class Forest:
     def __init__(self):
-        self.sounds = ["chirping", "leaves rustling", "insects", "bird", "wind"]
-        self.background = ["chirping", "leaves rustling", "insects"]
-        self.foreground = ["bird", "wind"]
+        self.sounds = ["chirping", "leaves rustling", "insects", "bird", "wind", "crickets", "birds"]
+        self.background = ["bird", "leaves rustling", "insects"]
+        self.foreground = ["chirping", "wind", "crickets", "birds"]
 
     def query_freesound(self, query, filter, num_results=10):
         """Queries freesound with the given query and filter values.
@@ -91,9 +91,9 @@ class Rainforest:
 
 class Desert:
     def __init__(self):
-        self.sounds = ["wind", "insects, buzzing", ]
-        self.background = ["birds chirping", "insects, buzzing", "hawk", "snake"]
-        self.foreground = ["hawk", "wind", "insects, buzzing"]
+        self.sounds = ["wind", "eagle", "snake", "sand"]
+        self.background = ["wind", "sand"]
+        self.foreground = ["eagle", "snake"]
 
     def query_freesound(self, query, filter, num_results=10):
         """Queries freesound with the given query and filter values.
