@@ -5,11 +5,8 @@ import random
 import database as db
 import os
 
-prob = 70
+prob = 15
 
-# background = ["chirping", "leaves rustling"]
-# filter = 'channels:1 type:wav tag:field-recording'
-# num_results=1
 
 def setpath():
     cwd = os.getcwd()
@@ -45,20 +42,19 @@ def create_background(path):
         background = audio_segments_background[0]
         for i in range(1, len(audio_segments_background)):
             background = background.overlay(audio_segments_background[i])
-        backDuration = len(background)
     return background
+
 
 def create_foreground(path, background):
     if os.path.exists(path):
         audio_segments_foreground = sorting(generate_audio_segments(path))
         mixed = background
-        backDuration = len(background)
+        back_duration = len(background)
         for sound in audio_segments_foreground:
-            n = backDuration % prob
+            n = back_duration % prob
             for i in range(n):
-                startIndex = random.randint(0, backDuration)
-                panRandom = random.uniform(-1, 1)
-                mixed = mixed.overlay(sound.pan(panRandom), position=startIndex)
+                start_index = random.randint(0, back_duration)
+                pan_random = random.uniform(-1, 1)
+                mixed = mixed.overlay(sound.pan(pan_random), position=start_index)
 
     return mixed
-
