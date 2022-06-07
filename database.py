@@ -58,3 +58,25 @@ def generate_previews(sounds, filter, num_results, directory):
     sounds = generate_queries(sounds, filter, num_results)
     for count, sound in enumerate(sounds):
         retrieve_sound_preview(sound, directory + '/')
+
+
+def sounds_notDatabase(sound, path):
+    filter = 'channels:2'
+    num_results = 10
+    query = sound
+    freesound_query =  {
+            'query': query,
+            'filter': filter,
+            'num_results': num_results,
+        }
+    if filter is None:
+        filter = 'duration:[0 TO 30]'  # Set default filter
+    pager = freesound_client.text_search(
+        query=query,
+        filter=filter,
+        fields=','.join(FREESOUND_STORE_METADATA_FIELDS),
+        group_by_pack=1,
+        page_size=num_results
+    )
+    sounds = [sound for sound in pager]
+    generate_previews(sounds, filter, 1, path + '/' + 'nonDBsounds')

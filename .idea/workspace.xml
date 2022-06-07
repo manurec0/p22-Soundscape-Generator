@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1a6aa94e-0c81-498e-a50b-cf1194ca3ed6" name="Changes" comment="interface added to main">
-      <change afterPath="$PROJECT_DIR$/Audio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/licenses.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Audio.py" beforeDir="false" afterPath="$PROJECT_DIR$/Audio.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/database.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database_classes.py" beforeDir="false" afterPath="$PROJECT_DIR$/database_classes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
@@ -45,7 +44,7 @@
       <recent name="C:\Users\Manu\PycharmProjects\p22-Soundscape-Generatorv2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.Audio">
+  <component name="RunManager" selected="Python.Virtual">
     <configuration name="Audio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="p22-Soundscape-Generator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -245,5 +244,16 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="interface added to main" />
     <option name="LAST_COMMIT_MESSAGE" value="interface added to main" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Audio.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
