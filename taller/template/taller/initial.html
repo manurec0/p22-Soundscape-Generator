@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+ 
+<style>
+    #pelota {
+        border-radius:50%;
+        width:50px;
+        height:50px;
+        position:fixed;
+        background-color:Red;
+    }
+</style>
+
+</head>
+
+
+<body>
+    <section class="s s-basic cf sc-m wnd-background-image  wnd-w-narrow wnd-s-normal wnd-h-auto">
+        <div class="s-w cf">
+            <div class="s-o cf">
+                <div class="s-bg cf">
+                    <div class="s-bg-l wnd-background-image fx-none bgpos-center-center bgatt-scroll">
+                        <picture><img src="https://8eaf4049e9.cbaul-cdnwnd.com/2752e8ea3f8017563976dde3c62857be/200000002-4c9884c989/image-2.png?ph=8eaf4049e9" width="612" height="459" alt="" loading="lazy" ></picture>
+                        
+                    </div>
+                    <div class="s-bg-l s-bg-lo overlay-black"></div>
+                </div>
+                <div class="s-c cf">
+                    <div class="content ez cf wnd-no-cols">
+        <div class="ez-c"><div class="b-img b-img-default b b-s cf wnd-orientation-square wnd-type-icon img-s-n" style="margin-left:42.71%;margin-right:42.71%;" id="wnd_ImageBlock_81682">
+        <div class="b-img-w">
+            <div class="b-img-c" style="padding-bottom:100%;text-align:center;">
+                
+                <div class="b-img-embed">
+                    <embed id="wnd_ImageBlock_81682_img" alt="" style="top:0%;left:0%;width:100%;height:100%;position:absolute;" data-src="https://d1di2lzuh97fh2.cloudfront.net/files/0r/0r9/0r9swa.svg?ph=8eaf4049e9" type="image/svg+xml">
+                <script>checkAndChangeSvgColor('wnd_ImageBlock_81682_img');</script></div>
+            </div>
+            <div class="b-img-t"></div>
+        </div>
+    </div><div class="b-img b-img-default b b-s cf wnd-orientation-square wnd-type-icon img-s-n" style="margin-left:42.71%;margin-right:42.71%;" id="wnd_ImageBlock_84952">
+        <div class="b-img-w">
+            <div class="b-img-c" style="padding-bottom:75%;text-align:center;">
+                
+                <div class="b-img-embed">
+                    <embed id="wnd_ImageBlock_84952_img" alt="" style="top:-17.92%;left:0%;width:100%;height:133.33333333333%;position:absolute;" data-src="https://d1di2lzuh97fh2.cloudfront.net/files/0r/0r9/0r9swa.svg?ph=8eaf4049e9" type="image/svg+xml">
+                <script>checkAndChangeSvgColor('wnd_ImageBlock_84952_img');</script></div>
+            </div>
+            <div class="b-img-t"></div>
+        </div>
+    </div><div class="b-img b-img-default b b-s cf wnd-orientation-square wnd-type-icon img-s-n" style="margin-left:42.71%;margin-right:42.71%;" id="wnd_ImageBlock_42292">
+        <div class="b-img-w">
+            <div class="b-img-c" style="padding-bottom:100%;text-align:center;">
+                
+                <div class="b-img-embed">
+                    <embed id="wnd_ImageBlock_42292_img" alt="" style="top:0%;left:0%;width:100%;height:100%;position:absolute;" data-src="https://d1di2lzuh97fh2.cloudfront.net/files/0r/0r9/0r9swa.svg?ph=8eaf4049e9" type="image/svg+xml">
+                <script>checkAndChangeSvgColor('wnd_ImageBlock_42292_img');</script></div>
+            </div>
+            <div class="b-img-t"></div>
+        </div>
+    </div></div>
+    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+<div id="pelota"></div>
+ 
+</body>
+</html>
+
+
+<script>
+  var pelota=document.getElementById("pelota");
+  pelota.addEventListener("mouseover",mover);
+  function mover(e) {
+      var x=Math.floor(Math.random()*(window.innerWidth-pelota.offsetWidth));
+      var y=Math.floor(Math.random()*(window.innerHeight-pelota.offsetHeight));
+      pelota.style.top=y+"px";
+      pelota.style.left=x+"px";
+
+ }
+</script>
