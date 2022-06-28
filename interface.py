@@ -6,6 +6,9 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+"""This file contains the basic version of the program's interface using PySimpleGUI library for python.
+"""
+
 
 def run():
     sg.theme('LightBrown5')
@@ -30,14 +33,3 @@ def run():
         elif event == 'image':
             print(event, values)
 
-        '''
-        x,y = values['image']
-        if x is None:
-            print ("UP")
-        else:
-            print (f"DOWN {values['image']}")
-    
-    else:
-        print(event, values)
-        
-        '''

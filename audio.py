@@ -7,17 +7,21 @@ import os
 
 prob = 15
 
+"""This file contains the functions to mix all sounds and create a single .wav file with the soundscape.
+"""
+
 
 def setpath():
+    """Set working directory to the correct path.
+    """
     cwd = os.getcwd()
-    path = format(cwd) + '/files database'
+    path = format(cwd) + '/' + db.FILES_DIR
     return path
 
 
-# db.generate_previews(background, filter, num_results, path)
-
-
 def generate_audio_segments(path):
+    """Generate working audio segments from the given preview files of the sounds.
+    """
     os.chdir(path)
     file_list = os.listdir(path)
     audio_segments = []
@@ -31,12 +35,16 @@ def generate_audio_segments(path):
 
 
 def sorting(lst):
+    """Basic list sorting.
+    """
     lst2 = sorted(lst, key=len)
     lst2 = lst2[::-1]
     return lst2
 
 
 def create_background(path):
+    """Create the background of the soundscape using the corresponding sounds.
+    """
     if os.path.exists(path):
         audio_segments_background = sorting(generate_audio_segments(path))
         background = audio_segments_background[0]
@@ -46,6 +54,8 @@ def create_background(path):
 
 
 def create_foreground(path, background):
+    """Create the foreground of the soundscape using the corresponding sounds.
+    """
     if os.path.exists(path):
         audio_segments_foreground = sorting(generate_audio_segments(path))
         mixed = background

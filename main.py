@@ -11,8 +11,8 @@ text = interface.run()
 keywords, synonyms = ts.query(text)
 class_names, class_objects = db_classes.get_classes()
 
-filter = 'channels:1 type:wav tag:field-recording'
-filterBackground = 'channels:2 type:wav tag:field-recording tag:background'
+filter = 'type:wav tag:field-recording'
+filterBackground = 'type:wav tag:field-recording tag:background'
 num_results = 1
 path = db.FILES_DIR
 

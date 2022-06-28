@@ -14,6 +14,9 @@ nltk.download('stopwords')
 nltk.download('punkt')
 rake_nltk_var = Rake()
 
+"""This file contains the necessary functions to operate Language Processing part of the project using Rake NLTK.
+"""
+
 
 def synonym_extractor(text):
     synonyms = []

@@ -1,17 +1,9 @@
-import freesound
-import os
 import inspect, sys
 
-FREESOUND_API_KEY = 'e2tYlnLzVgrRfWUnlXmOHwK7aDICqeNw8fujVubQ'
-FILES_DIR = 'files classes'  # Place where to store the downloaded files. Will be relative to the current folder.
-DATAFRAME_FILENAME = 'dataframe.csv'  # File where we'll store the metadata of our sounds collection
-FREESOUND_STORE_METADATA_FIELDS = ['id', 'name', 'username', 'previews', 'license',
-                                   'tags']  # Freesound metadata properties to store
 
-freesound_client = freesound.FreesoundClient()
-freesound_client.set_token(FREESOUND_API_KEY)
-if not os.path.exists(FILES_DIR): os.mkdir(FILES_DIR)
-
+"""
+This file creates some basic environment instances with some related sounds in order to make certain scenarios more immersive.
+"""
 
 class Forest:
     def __init__(self):
