@@ -17,3 +17,5 @@ For further information you can go to https://github.com/MTG/freesound-python
 
 In order to manipulate audio files you will need to install ffmpeg for Windows. You can follow this guide:
 https://www.google.com/amp/s/www.geeksforgeeks.org/how-to-install-ffmpeg-on-windows/amp/
+
+In the following link you can find the instructions: https://docs.google.com/presentation/d/1UclblSpJEIdqbVw2ji43So-7GRqXO_RXqznuefMhbLg/edit?usp=sharing
