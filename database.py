@@ -24,7 +24,7 @@ if not os.path.exists(FILES_DIR): os.mkdir(FILES_DIR)
 
 """
 This file contains some basic functions in order to search sounds in freesound.org and create the previews.
-All files will be stored in the directory FILES_DIR which is set by default to .../files_database.
+All files will be stored in the directory FILES_DIR which is set by default to .../files database.
 """
 
 
