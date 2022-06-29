@@ -7,7 +7,7 @@ This file creates some basic environment instances with some related sounds in o
 
 class Forest:
     def __init__(self):
-        self.sounds = ["chirping", "leaves rustling", "insects", "bird", "wind", "crickets", "birds"]
+        self.sounds = ["chirping", "leaves rustling", "insects", "bird", "wind", "birds"]
         self.background = ["bird", "leaves rustling", "insects"]
         self.foreground = ["chirping", "wind", "crickets", "birds"]
 
@@ -28,30 +28,30 @@ class Desert:
 
 class City:
     def __init__(self):
-        self.sounds = ["cars", "people talking", "sirens", "engines"]
-        self.background = ["helicopter", "insects, buzzing", "car, horn", "phone, ringing", "dog, barking"]
+        self.sounds = ["helicopter", "car horn", "phone ringing", "dog barking", "engines", "sirens", "cars", "wind", "birds chirping"]
+        self.background = ["helicopter", "car horn", "phone ringing", "dog barking"]
         self.foreground = ["sirens", "cars", "wind", "birds chirping"]
 
 
 class Beach:
     def __init__(self):
-        self.sounds = ["waves", "wind", "cars", "children, screaming", ]
-        self.background = ["waves", "birds chirping", "wind", "people talking", "music"]
+        self.sounds = ["waves", "birds chirping", "wind", "tropical bird"]
+        self.background = ["waves", "birds chirping", "wind"]
         self.foreground = ["tropical bird", "wind", "waves"]
 
 
 class Airport:
     def __init__(self):
-        self.sounds = ["engines", "planes", "whistle", "people talking", ]
-        self.background = ["cars", "birds chirping", "helicopters", "rolling suitcases"]
-        self.foreground = ["cars", "sirens", "megaphone"]
+        self.sounds = ["helicopters",  "airplanes", "engines", "planes", "cars", "sirens", "megaphone", "people talking", "rolling suitcases"]
+        self.background = ["helicopters",  "airplanes", "engines", "planes"]
+        self.foreground = ["cars", "sirens", "megaphone", "people talking", "rolling suitcases"]
 
 
 class Hospital:
     def __init__(self):
-        self.sounds = ["people talking", "cars", "sirens", "megaphone", "crying babies"]
-        self.background = ["sirens", "people screaming", "people crying", "wheelchair", "sneezes", "cough"]
-        self.foreground = ["phone, ringing", "sirens", "people talking"]
+        self.sounds = ["sirens", "people screaming", "people crying", "hospital", "phone ringing", "megaphone", "people talking", "wheelchair", "sneezes", "cough"]
+        self.background = ["sirens", "people screaming", "people crying", "hospital"]
+        self.foreground = ["phone ringing", "megaphone", "people talking", "wheelchair", "sneezes", "cough"]
 
 
 class Stadium:
