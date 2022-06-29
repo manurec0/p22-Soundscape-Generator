@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1a6aa94e-0c81-498e-a50b-cf1194ca3ed6" name="Changes" comment="interface added to main">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/p22-Soundscape-Generator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/p22-Soundscape-Generator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+    <list default="true" id="1a6aa94e-0c81-498e-a50b-cf1194ca3ed6" name="Changes" comment="stereo implemented, capture errors and change probabilistic model">
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +17,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -43,7 +45,7 @@
       <recent name="C:\Users\Manu\PycharmProjects\p22-Soundscape-Generatorv2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.views">
+  <component name="RunManager" selected="Python.Virtual">
     <configuration name="TestAudio" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="p22-Soundscape-Generator" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -202,11 +204,11 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.views" />
-        <item itemvalue="Python.audio" />
-        <item itemvalue="Python.audio (1)" />
-        <item itemvalue="Python.TestAudio" />
         <item itemvalue="Python.punkt" />
+        <item itemvalue="Python.TestAudio" />
+        <item itemvalue="Python.audio (1)" />
+        <item itemvalue="Python.audio" />
+        <item itemvalue="Python.views" />
       </list>
     </recent_temporary>
   </component>
