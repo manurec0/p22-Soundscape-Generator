@@ -31,6 +31,6 @@ def initial(request):
             'x3': x3,
             'y3': y3
         }
-        # p = subprocess.Popen("C:\\Users\\ainam\\Desktop\\UPF 3R\\TALLER MUSICAL\\hello\\dist\\main.exe")
-        main(text)
+        pos = [x1, x2, x3]
+        main(text, pos)
     return render(request, 'initial.html', dict)

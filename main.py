@@ -7,12 +7,12 @@ import os
 import shutil
 
 
-def main(text):
+def main(text, pos):
 
     keywords, synonyms = ts.query(text)
     class_names, class_objects = db_classes.get_classes()
 
-    filter = 'channels:1 type:wav tag:field-recording'
+    filter = 'type:wav tag:field-recording'
     filterBackground = 'channels:2 type:wav tag:field-recording tag:background'
     num_results = 1
     path = db.FILES_DIR
@@ -38,8 +38,6 @@ def main(text):
             instance = class_()
             sounds = instance.sounds
             sound_list += sounds
-            #queries = db.generate_queries(sounds, filter, num_results)
-            # db.generate_previews(sounds, filter, num_results, path)
             # background_sounds
             back_sounds = instance.background
             if not os.path.exists(path + '/' + 'background'): os.mkdir(path + '/' + 'background')
@@ -63,10 +61,13 @@ def main(text):
             db.generate_previews(list, filter, num_results, path + '/' + 'foreground')
 
     dir = audio.setpath()
-    background = audio.create_background(format(dir + '/' + 'background'))
-    mixed = audio.create_foreground(format(dir + '/' + 'foreground'), background)
-    os.chdir(format(dir))
-    mixed.export("mixed.wav", format = 'wav')
+    try:
+        background, right_track, left_track = audio.create_background(format(dir + '/' + 'background'))
+        mixed = audio.create_foreground(format(dir + '/' + 'foreground'), background, right_track, left_track, pos)
+        os.chdir(format(dir))
+        mixed.export("mixed.wav", format='wav')
 
-    queries = db.generate_queries(sound_list, filter, num_results)
-    licenses.print_credits(queries)
+        queries = db.generate_queries(sound_list, filter, num_results)
+        licenses.print_credits(queries)
+    except IndexError:
+        print("There was an error fetching your sounds! Try changing your wording or being more descriptive.")
