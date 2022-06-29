@@ -68,7 +68,7 @@ def create_foreground(path, background, right_track, left_track):
         prob = dur_sec/60
         for sound in audio_segments_foreground:
             left_or_right = random.randint(0, 1)
-            n = round(back_duration % prob)
+            n = round(prob)
             if n == 0:
                 n = 1
             for i in range(n):
